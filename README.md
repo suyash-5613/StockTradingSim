@@ -1,81 +1,48 @@
 # Stock Trading Simulator 📈
 
-A full-stack web application that allows users to simulate stock trading. Users can create an account, manage their portfolio, buy and sell stocks using real-time mock data, and track their performance via an interactive dashboard.
+A full-stack web application designed to simulate real-time stock trading. Users can create an account, manage a virtual portfolio, execute buy and sell orders using real-time mock data, and track their trading performance through an interactive dashboard.
 
-## 🌟 Features
+## 🌟 About the Project
 
-- **User Authentication**: Secure signup and login functionality.
-- **Portfolio Management**: Track your holding, cash balance, and overall portfolio value.
-- **Trading Simulator**: Buy and sell stocks instantly with simulated market data.
-- **Interactive Dashboard**: Visualize your portfolio performance and view market trends.
-- **RESTful API**: Custom backend to process trades and manage user data securely.
+This simulator provides a risk-free environment for users to practice trading strategies. By offering a comprehensive dashboard and real-time portfolio tracking, the platform mirrors the experience of a standard broker without the financial risk.
 
-## 🛠️ Tech Stack
+**Core Features include:**
+- **User Authentication**: Secure signup and login functionality using JWT.
+- **Portfolio Management**: Keep track of cash balances, current stock holdings, and overall portfolio net worth.
+- **Trading Simulator**: Instant execution of buy and sell orders using dynamic simulated market data.
+- **Interactive Dashboard**: Clean and modern visualization of portfolio performance.
 
-### Frontend
-- **React** (via Vite)
-- **Tailwind CSS** (for styling)
-- **Context API** (State Management)
+## 🛠️ Tech Stack & Structure
 
-### Backend
-- **Node.js & Express.js**
-- **MongoDB** (with Mongoose)
-- **JWT** (JSON Web Tokens for Auth)
+The project is structured as a monorepo containing both the frontend and backend applications.
 
-## 🚀 Getting Started
+### 💻 Frontend (`/frontend`)
+The client-side is a Single Page Application (SPA) built for speed and responsiveness.
+- **React** (Bootstrapped via Vite for fast HMR and optimized builds)
+- **Tailwind CSS** (For utility-first, modern UI styling)
+- **Context API** (Used for global state management like Authentication and User Data)
+- **React Router** (For seamless client-side navigation)
 
-### Prerequisites
-Make sure you have [Node.js](https://nodejs.org/) installed on your machine. You will also need a MongoDB database instance running.
+### ⚙️ Backend (`/backend`)
+The server-side handles business logic, database queries, and RESTful API endpoints.
+- **Node.js & Express.js** (Robust and fast web framework)
+- **MongoDB** (NoSQL database for flexible data storage)
+- **Mongoose** (ODM for strict schema validation and relationship mapping)
+- **Bcrypt & JWT** (For secure password hashing and authorization)
 
-### 1. Clone the repository
-```bash
-git clone https://github.com/suyash-5613/StockTradingSim.git
-cd StockTradingSim
+## 📁 Repository Structure
+```text
+StockTradingSim/
+├── backend/            # Express backend API
+│   ├── config/         # Database and environment configurations
+│   ├── controllers/    # API endpoint logic
+│   ├── middleware/     # Custom auth and error handlers
+│   ├── models/         # Mongoose schemas (User, Portfolio, etc.)
+│   └── routes/         # Express Router definitions
+└── frontend/           # React frontend application
+    ├── public/         # Static assets
+    └── src/
+        ├── components/ # Reusable React components (Navbar, Modals, etc.)
+        ├── context/    # Global Context Providers
+        └── pages/      # Route-level components (Login, Dashboard, Portfolio)
 ```
-
-### 2. Backend Setup
-1. Navigate to the backend directory:
-   ```bash
-   cd backend
-   ```
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-3. Create a `.env` file in the `backend` folder and add your environment variables:
-   ```env
-   PORT=5000
-   MONGO_URI=your_mongodb_connection_string
-   JWT_SECRET=your_jwt_secret
-   ```
-4. Start the backend server:
-   ```bash
-   npm run dev
-   ```
-
-### 3. Frontend Setup
-1. Open a new terminal and navigate to the frontend directory:
-   ```bash
-   cd frontend
-   ```
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-3. Create a `.env` file in the `frontend` folder if needed:
-   ```env
-   VITE_API_URL=http://localhost:5000/api
-   ```
-4. Start the frontend development server:
-   ```bash
-   npm run dev
-   ```
-
-### 4. Running the App
-Once both servers are running, the frontend will typically be accessible at `http://localhost:5173`. Open this URL in your browser to start trading!
-
-## 🤝 Contributing
-Contributions, issues, and feature requests are welcome!
-
-## 📝 License
-This project is open source and available under the [MIT License](LICENSE).
